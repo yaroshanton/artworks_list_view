@@ -1,24 +1,17 @@
 import React from 'react';
-// utils
+//utils
 import dayjs from 'dayjs';
 import {ASC} from 'utils/constants';
-// icons
+//icons
 import {ReactComponent as EyeIcon} from '../../../../assets/icons/eye.svg';
 import {ReactComponent as EyeCloseIcon} from '../../../../assets/icons/eye-close.svg';
 import {ReactComponent as DocksIcon} from '../../../../assets/icons/docks.svg';
 import {ReactComponent as StrokeIcon} from '../../../../assets/icons/stroke.svg';
 import {ReactComponent as StrokeActiveIcon} from '../../../../assets/icons/stroke-active.svg';
-// styles
+//styles
 import styles from './ArtworksList.module.scss';
 
-export const screenBreakpoints = [
-	{display: 'max', size: 320},
-	{display: 'max', size: 768},
-	{display: 'max', size: 1024},
-	{display: 'max', size: 1440},
-	{display: 'max', size: 1920},
-	{display: 'min', size: 2560},
-];
+export const screenBreakpoints = [{size: 320}, {size: 768}, {size: 1024}, {size: 1440}, {size: 1920}, {size: 2560}];
 
 export const sortItems = (items, field, direction) => {
 	return [...items].sort((a, b) => {
@@ -98,14 +91,14 @@ export const renderDocuments = (documentsNumber) => {
 };
 
 export const renderPictureSources = (transformations) => {
-	return screenBreakpoints.map(({display, size}, index) => {
+	return screenBreakpoints.map(({size}, index) => {
 		const transformation = transformations[index];
 
 		return (
 			<source
 				key={index}
 				srcSet={`images/${transformation.filename_disk}`}
-				media={`(${display}-width: ${size}px)`}
+				media={`(max-width: ${size}px)`}
 				sizes={`${transformation.width}px`}
 				type="image/webp"
 			/>
