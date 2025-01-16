@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/public/images/a8c7cfa6-817d-4f49-a94e-41ff3cc47ec8.png
+/public/images/b4d3cfa6-123d-4e89-a47e-51ff3aa56bc8.png
+/public/images/c1d3cfa6-567d-4e89-b56e-61af3aa88cd8.png
